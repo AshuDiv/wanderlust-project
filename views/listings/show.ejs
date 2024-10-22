@@ -20,14 +20,29 @@
 
      <% if(currUser && listing.owner._id.equals(currUser._id)){ %>
       
-        <div class="btns">
-          <a href="/listings/<%= listing._id %>/edit"
-             class="btn edit-btn btn-dark col-1 offset-3">Edit</a>
-       
-          <form method="POST" action="/listings/<%=listing._id%>?_method=DELETE">
-          <button class="btn btn-dark offset-5">Delete </button> 
-        </form>
+      <div class="btns row btn-container">
+        <div class="col-12 col-md-auto mb-2 mb-md-0">
+          <a href="/listings/<%= listing._id %>/edit" class="btn edit-btn btn-dark custom-btn">Edit</a>
+        </div>
+      
+        <div class="col-12 col-md-auto">
+          <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE">
+            <button class="btn btn-dark custom-btn">Delete</button>
+          </form>
+        </div>
       </div>
+      
+      <style>
+       
+        .custom-btn {
+          min-width: 100px; /* Minimum width to prevent button from becoming too small */
+          max-width: 120px; /* Maximum width to prevent button from stretching too much */
+          margin-left: 90px;
+          padding: 10px 20px;
+        }
+      </style>
+      
+      
  
    <% } %>
 

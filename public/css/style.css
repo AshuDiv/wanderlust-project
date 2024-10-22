@@ -112,4 +112,14 @@ object-fit: cover !important;
     margin: 0 auto; /* Center the card */
   }
 
- 
+ /* new changes */
+ /* Hide navbar items if the screen size is small */
+@media (max-width: 767.98px) {
+    .navbar-nav.ms-auto {
+        display: none; /* Initially hide the right-side items */
+    }
+
+    .navbar-collapse.show .navbar-nav.ms-auto {
+        display: flex; /* Show on toggle */
+    }
+}
